@@ -1,0 +1,11 @@
+@use 'partials/reset';
+@use 'partials/dark-mode';
+@use 'partials/header';
+@use 'partials/typography';
+@use 'partials/layout';
+@use 'partials/buttons';
+@use 'partials/filtros';   // Aquí agregué los estilos de los botones filtro brutalistas
+@use 'partials/buscador'; // Aquí van los estilos del buscador
+@use 'partials/blog';
+@use 'partials/ads';
+@use 'partials/cta';

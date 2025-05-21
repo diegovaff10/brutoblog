@@ -1,0 +1,74 @@
+[
+  {
+    "titulo": "Cómo aprendi a querer los errores",
+    "url": "/blog/como-aprendi-a-querer-los-errores.html",
+    "img": "/assets/blog/error.jpeg",
+    "alt": "mensaje de error",
+    "categoria": "programación"
+  },
+  {
+    "titulo": "Css y el arte de perder la calma",
+    "url": "/blog/css-y-el-arte-de-perder-la-calma.html",
+    "img": "/assets/blog/css-crisis.jpg",
+    "alt": "error de css",
+    "categoria": "programación"
+  },
+  {
+    "titulo": "Colores que cuentan historias",
+    "url": "/blog/colores-que-cuentan-historias.html",
+    "img": "/assets/blog/abstracto-ia.avif",
+    "alt": "Generación visual por IA",
+    "categoria": "arte"
+  },
+  {
+    "titulo": "La banda sonora de mis diás",
+    "url": "/blog/la-banda-sonora-de-mis-dias.html",
+    "img": "/assets/blog/vinilo-colores.webp",
+    "alt": "Playlist de Musica",
+    "categoria": "musica"
+  },
+  {
+    "titulo": "Moda digital: entre NFTs, skins y lo artesanal",
+    "url": "/blog/moda-digital.html",
+    "img": "/assets/blog/moda-nft.jpg",
+    "alt": "Moda generada por IA",
+    "categoria": "moda"
+  },
+  {
+    "titulo": "Rincones para perderse (Mendoza)",
+    "url": "/blog/rincones-para-perderse-mendoza.html",
+    "img": "/assets/blog/mendoza-montañas.jpg",
+    "alt": "Rincones en mendoza",
+    "categoria": "turismo"
+  },
+    {
+    "titulo": "El arte generativo en la era digital",
+    "url": "/blog/arte-generativo-digital.html",
+    "img": "/assets/blog/arte-ia.webp",
+    "alt": "Arte creado por IA",
+    "categoria": "tecnologia"
+  },
+    {
+    "titulo": "Ciudades que se caminan con el alma",
+    "url": "/blog/ciudades-que-se-caminan.html",
+    "img": "/assets/blog/caminando-ciudad.jpg",
+    "alt": "Turismo mundial",
+    "categoria": "turismo"
+  },
+    {
+    "titulo": "Pensamientos que se caen mientras lavás los platos",
+    "url": "/blog/filosofia-cotidiana.html",
+    "img": "/assets/blog/platos-mojados.jpg",
+    "alt": "reflexion sobre la cotidianidad",
+    "categoria": "filosofia"
+  },
+    {
+    "titulo": "El futuro de la inteligencia artificial",
+    "url": "/blog/futuro-inteligencia-artificial.html",
+    "img": "/assets/blog/futuro-ia-digital.jpg",
+    "alt": "reflexion sobre el uso de la IA",
+    "categoria": "tecnologia"
+  }
+
+]
+

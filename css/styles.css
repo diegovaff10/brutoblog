@@ -1,0 +1,985 @@
+@charset "UTF-8";
+/* -----------------------------------
+  TIPOGRAFÍA & ENLACES
+----------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+/* -----------------------------------
+  RESET & BASE
+----------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* -----------------------------------
+  BOTÓN DARK MODE (FIXED)
+----------------------------------- */
+#toggle-dark-mode {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: 2px solid #000;
+  color: #000;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 9999;
+  /* Siempre arriba */
+  border-radius: 0;
+  /* Estilo brutalista puro */
+  user-select: none;
+}
+
+/* Estado Dark Mode para el botón */
+body.dark-mode #toggle-dark-mode {
+  border-color: #eee;
+  color: #eee;
+}
+
+/* -----------------------------------
+  MODO OSCURO (Dark Mode)
+----------------------------------- */
+body.dark-mode {
+  background-color: #121212;
+  /* Fondo oscuro */
+  color: #eee;
+  /* Texto claro */
+  font-family: "Space Mono", monospace;
+}
+
+/* Enlaces en modo oscuro */
+body.dark-mode a {
+  color: #eee;
+  text-decoration: underline;
+  transition: background 0.2s ease;
+}
+
+body.dark-mode a:hover {
+  background: #eee;
+  color: #121212;
+}
+
+/* Header modo oscuro */
+body.dark-mode .header {
+  background: #121212;
+  border-bottom: 2px solid #eee;
+}
+
+body.dark-mode .logo,
+body.dark-mode .nav a {
+  color: #eee;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Hero modo oscuro */
+body.dark-mode .hero {
+  border-bottom: 2px solid #eee;
+}
+
+body.dark-mode .hero-subtitle {
+  color: #bbb;
+}
+
+/* Botón modo oscuro */
+body.dark-mode .btn {
+  background: #eee;
+  color: #121212;
+  border: 2px solid #eee;
+  transition: all 0.2s ease;
+}
+
+body.dark-mode .btn:hover {
+  background: #121212;
+  color: #eee;
+}
+
+/* Tarjetas modo oscuro */
+body.dark-mode .blog-card {
+  border: 2px solid #eee;
+  background: #1e1e1e;
+  color: #eee;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+body.dark-mode .blog-card:hover {
+  background: #eee;
+  color: #121212;
+}
+
+body.dark-mode .blog-card a {
+  color: #121212;
+  font-weight: bold;
+}
+
+body.dark-mode .blog-card a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* Footer modo oscuro */
+body.dark-mode .footer {
+  border-top: 2px solid #eee;
+  background: #121212;
+  color: #bbb;
+}
+
+body.dark-mode .footer .redes a {
+  color: #bbb;
+}
+
+body.dark-mode .footer .redes a:hover {
+  color: #eee;
+  text-decoration: underline;
+}
+
+/* -----------------------------------
+  SIDEBAR DE POSTS RELACIONADOS (modo oscuro)
+----------------------------------- */
+body.dark-mode .sidebar-blog {
+  border-left-color: #eee;
+}
+body.dark-mode .sidebar-blog h3 {
+  color: #eee;
+}
+body.dark-mode .sidebar-blog h3 .etiqueta-actual {
+  background: #eee;
+  color: #121212;
+}
+body.dark-mode .sidebar-blog .blog-relacionados li {
+  background: #1e1e1e;
+  border: 2px solid #eee;
+  color: #eee;
+  box-shadow: 3px 3px 0 #eee;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+body.dark-mode .sidebar-blog .blog-relacionados li:hover {
+  background: #eee;
+  color: #121212;
+}
+body.dark-mode .sidebar-blog .blog-relacionados li:hover a,
+body.dark-mode .sidebar-blog .blog-relacionados li:hover button {
+  color: #121212;
+  border-color: #121212;
+}
+body.dark-mode .sidebar-blog .blog-relacionados li img {
+  border: 1.5px solid #eee;
+}
+body.dark-mode .sidebar-blog .blog-relacionados li .contenido-card a.titulo-post {
+  color: inherit;
+}
+body.dark-mode .sidebar-blog .blog-relacionados li .contenido-card button.leer-mas {
+  border: 1.5px solid #eee;
+  color: inherit;
+  background: transparent;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+body.dark-mode .sidebar-blog .blog-relacionados li .contenido-card button.leer-mas:hover {
+  background: #121212;
+  color: #eee;
+  border-color: #eee;
+}
+@media (max-width: 900px) {
+  body.dark-mode .sidebar-blog {
+    border-left: none;
+    border-top: 3px solid #eee;
+  }
+}
+
+.header {
+  border-bottom: 2px solid #000;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.header .menu-toggle {
+  display: none;
+}
+@media (max-width: 768px) {
+  .header .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    z-index: 101;
+  }
+}
+.header .nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+@media (max-width: 768px) {
+  .header .nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+.header .nav a {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .header .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    background: #fff;
+    border: 2px solid #000;
+    padding: 0.5rem 1rem;
+    z-index: 99;
+  }
+  .header .nav.open {
+    display: block;
+  }
+}
+
+a {
+  text-decoration: underline;
+  color: #000;
+  transition: background 0.2s ease;
+}
+
+a:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* -----------------------------------
+  TIPOGRAFÍA FUERTE PARA TITULOS
+----------------------------------- */
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* -----------------------------------
+  GLOBAL BOX-SIZING
+----------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* -----------------------------------
+  CONTENEDOR CENTRALIZADO
+----------------------------------- */
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* -----------------------------------
+  HEADER FIJO, MINIMALISTA Y RESPONSIVO
+----------------------------------- */
+/* -----------------------------------
+  SECCIÓN HERO
+----------------------------------- */
+.hero {
+  padding: 5rem 2rem;
+  border-bottom: 2px solid #000;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* -----------------------------------
+  BLOG CARD
+----------------------------------- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.blog-card {
+  background: #fff;
+  border: 3px solid #000;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  box-shadow: 4px 4px 0px #000;
+  user-select: none;
+}
+.blog-card:hover, .blog-card:focus {
+  background: #000;
+  color: #fff;
+  outline: none;
+}
+.blog-card.active {
+  background: #000;
+  color: #fff;
+  box-shadow: none;
+  cursor: default;
+}
+
+.blog-card img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border: 1px solid #000;
+  margin-bottom: 0.5rem;
+  display: block;
+  /* elimina espacios debajo de la imagen */
+}
+
+/* -----------------------------------
+  FOOTER
+----------------------------------- */
+.footer {
+  border-top: 2px solid #000;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #000;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .redes a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer .redes a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+/* -----------------------------------
+  SCROLL REVEAL
+  -----------------------------------*/
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -----------------------------------
+  BOTÓN TIPO BRUTALISTA
+----------------------------------- */
+.btn {
+  background: #000;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border: 2px solid #000;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.categoria-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.categoria-btn {
+  background: #fff;
+  border: 3px solid #000;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  box-shadow: 4px 4px 0px #000;
+  user-select: none;
+}
+.categoria-btn:hover, .categoria-btn:focus {
+  background: #000;
+  color: #fff;
+  outline: none;
+}
+.categoria-btn.active {
+  background: #000;
+  color: #fff;
+  box-shadow: none;
+  cursor: default;
+}
+
+.buscador {
+  margin-bottom: 1.5rem;
+}
+
+#buscador {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  background: #fff;
+  color: #000;
+  transition: border-color 0.3s;
+}
+#buscador:focus {
+  border-color: #ff0000;
+  outline: none;
+  box-shadow: 6px 6px 0 #ff0000;
+}
+
+/* -----------------------------------
+  BLOG LAYOUT GENERAL
+----------------------------------- */
+.blog-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+@media (max-width: 900px) {
+  .blog-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -----------------------------------
+  ARTICLE PRINCIPAL
+----------------------------------- */
+.entrada-blog {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  /* Más ligera para cuerpo */
+  font-size: 1.1rem;
+  line-height: 1.8;
+  /* Un poco más aire */
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+.entrada-blog img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-sizing: border-box;
+}
+.entrada-blog .entrada-header {
+  margin-bottom: 2rem;
+}
+.entrada-blog .entrada-header .entrada-titulo,
+.entrada-blog .entrada-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #000;
+  padding-bottom: 0.5rem;
+}
+.entrada-blog .entrada-header .entrada-meta {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+.entrada-blog .entrada-header .entrada-img {
+  width: 100%;
+  margin: 2rem 0;
+  border: 2px solid #000;
+}
+.entrada-blog .entrada-contenido h2 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  border-left: 4px solid #000;
+  padding-left: 0.75rem;
+}
+.entrada-blog .entrada-contenido p {
+  margin-bottom: 1.5rem;
+}
+.entrada-blog .entrada-contenido blockquote {
+  font-family: "Fira Mono", monospace;
+  font-style: normal;
+  /* si querés que no esté en cursiva */
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-left: 4px solid #000;
+  padding-left: 1rem;
+  margin: 2rem 0;
+  color: #222;
+  background: #e0e0e0;
+  /* un gris clarito para que resalte */
+  box-shadow: 4px 4px 0 #000;
+  /* sombra fuerte estilo brutalista */
+  letter-spacing: 0.03em;
+  /* un toque de espacio */
+}
+.entrada-blog .entrada-contenido figure {
+  margin: 2rem 0;
+}
+.entrada-blog .entrada-contenido figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 2px solid #000;
+}
+.entrada-blog .entrada-contenido figure figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+.entrada-blog .entrada-footer {
+  margin-top: 3rem;
+  font-size: 0.95rem;
+  color: #444;
+  border-top: 2px dashed #000;
+  padding-top: 1rem;
+}
+
+.entrada-contenido p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.2rem;
+  line-height: 1;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  margin-top: 0.1rem;
+  padding: 0.2rem 0.4rem;
+  border: 2px solid currentColor;
+  background-color: rgba(0, 0, 0, 0.05);
+  /* sutil para claro/oscuro */
+  border-radius: 4px;
+  color: inherit;
+  font-family: "Georgia", serif;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* -----------------------------------
+  Anti-scroll lateral para todo el sitio
+----------------------------------- */
+body {
+  overflow-x: hidden;
+}
+
+/* -----------------------------------
+  SIDEBAR DE POSTS RELACIONADOS
+----------------------------------- */
+.sidebar-blog {
+  border-left: 3px solid #000;
+  padding-left: 2rem;
+  font-family: "Courier New", Courier, monospace;
+}
+.sidebar-blog h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.sidebar-blog h3 .etiqueta-actual {
+  background: #000;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.sidebar-blog .blog-relacionados {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.sidebar-blog .blog-relacionados li {
+  background: #fff;
+  border: 2px solid #000;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  box-shadow: 3px 3px 0 #000;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.sidebar-blog .blog-relacionados li:hover {
+  background: #000;
+  color: #fff;
+}
+.sidebar-blog .blog-relacionados li:hover a,
+.sidebar-blog .blog-relacionados li:hover button {
+  color: #fff;
+  border-color: #fff;
+}
+.sidebar-blog .blog-relacionados li img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border: 1.5px solid #000;
+}
+.sidebar-blog .blog-relacionados li .contenido-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sidebar-blog .blog-relacionados li .contenido-card a.titulo-post {
+  font-weight: bold;
+  font-size: 1rem;
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+.sidebar-blog .blog-relacionados li .contenido-card button.leer-mas {
+  align-self: flex-start;
+  background: transparent;
+  border: 1.5px solid #000;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  color: inherit;
+}
+.sidebar-blog .blog-relacionados li .contenido-card button.leer-mas:hover {
+  background: #000;
+  color: #fff;
+  border-color: #fff;
+}
+@media (max-width: 900px) {
+  .sidebar-blog {
+    border-left: none;
+    border-top: 3px solid #000;
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+}
+
+/* -----------------------------------
+  SHARE BUTTONS
+----------------------------------- */
+.share-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 600px) {
+  .share-buttons {
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+.share-buttons .btn-share {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 2px solid black;
+  background: white;
+  padding: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.share-buttons .btn-share img {
+  width: 20px;
+  height: 20px;
+}
+.share-buttons .btn-share:hover {
+  background-color: black;
+  border-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-share {
+    border-color: white;
+    background: black;
+  }
+  .btn-share:hover {
+    background-color: white;
+    border-color: black;
+  }
+}
+/* -----------------------------------
+  SHARE BOTTOM (footer del artículo)
+----------------------------------- */
+.share-buttons-bottom {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  border-top: 2px solid #222;
+  padding-top: 1rem;
+}
+@media (max-width: 600px) {
+  .share-buttons-bottom {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+.share-buttons-bottom .btn-share {
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border: 2px solid #222;
+  padding: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.share-buttons-bottom .btn-share img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+.share-buttons-bottom .btn-share:hover {
+  background-color: #222;
+  border-color: #fff;
+  filter: invert(1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .share-buttons-bottom {
+    border-top-color: #ddd;
+  }
+  .share-buttons-bottom .btn-share {
+    background-color: #222;
+    border-color: #ddd;
+  }
+  .share-buttons-bottom .btn-share:hover {
+    background-color: #ddd;
+    border-color: #222;
+    filter: none;
+  }
+}
+/* -----------------------------------
+  DONACIÓN + FOOTER DEL POST
+----------------------------------- */
+.donacion-section {
+  background: #f2f2f2;
+  border: 3px solid #222;
+  padding: 1.5rem 2rem;
+  margin: 0;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+@media (prefers-color-scheme: dark) {
+  .donacion-section {
+    background: #222;
+    border-color: #f2f2f2;
+    color: #f2f2f2;
+  }
+}
+
+.entrada-footer {
+  margin: 0;
+  padding: 2rem;
+  border-top: 3px solid #222;
+  font-family: "Courier New", Courier, monospace;
+  background: #f2f2f2;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+.entrada-footer p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+@media (prefers-color-scheme: dark) {
+  .entrada-footer {
+    background: #222;
+    border-top-color: #f2f2f2;
+    color: #f2f2f2;
+  }
+}
+
+pre {
+  padding: 1rem;
+  background-color: #2d2d2d;
+  color: #eee;
+  font-family: monospace;
+  overflow-x: auto;
+  border-left: 4px solid #ed1c24;
+}
+
+pre code {
+  display: block;
+  padding: 1rem;
+  background-color: #1e1e1e;
+  /* fondo oscuro tipo editor */
+  color: #f8f8f2;
+  /* color claro para texto */
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  /* permite scroll horizontal si es necesario */
+  border-radius: 8px;
+  white-space: pre-wrap;
+  /* ajusta a varias líneas si querés que corte en móvil */
+  word-break: break-word;
+}
+
+ul {
+  list-style-type: disc;
+  /* o square, circle, none */
+  padding-left: 1.5rem;
+  /* espacio para las viñetas */
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #111;
+}
+
+.blog-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  background-color: #9e9b9b;
+  /* o según categoría */
+  color: white;
+  padding: 0.25rem 0.75rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* -----------------------------------
+  CONTENEDOR DE ANUNCIOS Y BOTÓN OCULTAR
+----------------------------------- */
+.ads-container {
+  margin: 2rem 0;
+  border: 2px dashed #000;
+  padding: 1rem;
+  text-align: center;
+}
+
+.btn:disabled,
+.btn[disabled],
+#ocultar-anuncios:disabled {
+  background: #aaa;
+  color: #fff;
+  cursor: default;
+}
+
+/* Wrapper para botón ocultar anuncios y mensaje */
+.ocultar-anuncios-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Botón ocultar anuncios */
+#ocultar-anuncios {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  background-color: #000000;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+#ocultar-anuncios:hover:not(:disabled) {
+  background-color: #222;
+}
+
+/* Mensaje de gracias oculto, visible con JS */
+#mensaje-gracias {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #222;
+  display: none;
+}
+
+/* -----------------------------------
+  CTA (Call to Action) SECCIÓN
+----------------------------------- */
+.cta .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/*# sourceMappingURL=styles.css.map */

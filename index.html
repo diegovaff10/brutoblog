@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BrutoBlog</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <button id="toggle-dark-mode" aria-label="Alternar modo oscuro" class="btn-dark-mode">Dark Mode</button>
+
+  <div id="nav-container"></div>
+
+  <main>
+    <section class="hero reveal" id="inicio">
+      <div class="container">
+        <h2 class="hero-title">Escribimos para entender el mundo (y para no explotar).</h2>
+        <p class="hero-subtitle">Un blog sobre tecnología, arte, emociones y cosas que no me dejan dormir.</p>
+        <a href="#blog" class="btn btn-primary">Leer artículos</a>
+      </div>
+    </section>
+
+    <!-- <section class="presentacion reveal" id="sobre-mi">
+      <div class="container">
+        <h3>¿Quién soy?</h3>
+        <p>Me llamo Diego, soy estudiante de programación, fan de los detalles, y este blog es mi refugio creativo. Acá combino código, diseño, y emociones sin pedir permiso.</p>
+      </div>
+    </section> -->
+
+    <section class="filtro-categorias reveal" aria-label="Filtro de categorías">
+      <div class="container">
+        <h3>Filtrar por categoría</h3>
+        <div id="categoria-filtros" role="list" class="categoria-filtros">
+          <button type="button" data-categoria="todas" class="categoria-btn active" aria-pressed="true">Todas</button>
+          <button type="button" data-categoria="programacion" class="categoria-btn"
+            aria-pressed="false">Programación</button>
+          <button type="button" data-categoria="arte" class="categoria-btn" aria-pressed="false">Arte</button>
+          <button type="button" data-categoria="musica" class="categoria-btn" aria-pressed="false">Música</button>
+          <button type="button" data-categoria="filosofia" class="categoria-btn" aria-pressed="false">Filosofía</button>
+          <button type="button" data-categoria="literatura" class="categoria-btn"
+            aria-pressed="false">Literatura</button>
+          <button type="button" data-categoria="turismo" class="categoria-btn" aria-pressed="false">Turismo</button>
+          <button type="button" data-categoria="moda" class="categoria-btn" aria-pressed="false">Moda</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="ultimos-articulos reveal" id="blog">
+      <div class="container">
+        <h3>Últimos artículos</h3>
+
+        <!-- Buscador -->
+        <div class="buscador reveal">
+          <input type="text" id="buscador" placeholder="Buscar artículos..." aria-label="Buscar artículos" />
+        </div>
+
+        <!-- Contenedor dinámico -->
+        <div class="blog-grid"></div>
+      </div>
+    </section>
+
+    <section class="cta reveal">
+      <div class="container">
+        <h3>¿Te gustó lo que leíste?</h3>
+        <p>Podés contactarme para charlar, colaborar o simplemente compartir memes.</p>
+        <a href="#contacto" class="btn btn-primary">Hablamos</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container" class="reveal"></div>
+
+  <script src="/js/main.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const grid = document.querySelector(".blog-grid");
+      const filtroBtns = document.querySelectorAll(".categoria-btn");
+
+      fetch("/data/articulos.json")
+        .then((res) => res.json())
+        .then((articulos) => {
+          if (!grid) return;
+
+          articulos.forEach((post) => {
+            const card = document.createElement("article");
+            card.classList.add("blog-card");
+            card.setAttribute("data-categoria", post.categoria.toLowerCase());
+
+            card.innerHTML = `
+            <img src="${post.img}" alt="${post.alt}" loading="lazy" />
+            <h4>${post.titulo}</h4>
+            <p>${post.alt}</p>
+            <a href="${post.url}" class="btn btn-secondary" aria-label="Leer más sobre ${post.titulo}">Leer más</a>
+          `;
+
+            grid.appendChild(card);
+          });
+
+          // Ahora que ya están en el DOM, conectamos los filtros
+          filtroBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+              filtroBtns.forEach(b => b.classList.remove("active"));
+              btn.classList.add("active");
+
+              const categoriaActiva = btn.dataset.categoria.toLowerCase();
+              const cards = document.querySelectorAll(".blog-card");
+
+              cards.forEach(card => {
+                const categoria = card.dataset.categoria;
+                if (categoriaActiva === "todas" || categoria === categoriaActiva) {
+                  card.style.display = "block";
+                } else {
+                  card.style.display = "none";
+                }
+              });
+            });
+          });
+        })
+        .catch((error) => {
+          console.error("Error al cargar los artículos:", error);
+          grid.innerHTML = "<p>Error al cargar los artículos.</p>";
+        });
+    });
+  </script>
+
+
+
+
+</body>
+
+</html>

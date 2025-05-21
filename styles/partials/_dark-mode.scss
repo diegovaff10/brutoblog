@@ -1,0 +1,192 @@
+/* -----------------------------------
+  BOTÓN DARK MODE (FIXED)
+----------------------------------- */
+#toggle-dark-mode {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: 2px solid #000;
+  color: #000;
+  font-family: 'Space Mono', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 9999;
+  /* Siempre arriba */
+  border-radius: 0;
+  /* Estilo brutalista puro */
+  user-select: none;
+}
+
+/* Estado Dark Mode para el botón */
+body.dark-mode #toggle-dark-mode {
+  border-color: #eee;
+  color: #eee;
+}
+
+/* -----------------------------------
+  MODO OSCURO (Dark Mode)
+----------------------------------- */
+body.dark-mode {
+  background-color: #121212;
+  /* Fondo oscuro */
+  color: #eee;
+  /* Texto claro */
+  font-family: 'Space Mono', monospace;
+}
+
+/* Enlaces en modo oscuro */
+body.dark-mode a {
+  color: #eee;
+  text-decoration: underline;
+  transition: background 0.2s ease;
+}
+
+body.dark-mode a:hover {
+  background: #eee;
+  color: #121212;
+}
+
+/* Header modo oscuro */
+body.dark-mode .header {
+  background: #121212;
+  border-bottom: 2px solid #eee;
+}
+
+body.dark-mode .logo,
+body.dark-mode .nav a {
+  color: #eee;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Hero modo oscuro */
+body.dark-mode .hero {
+  border-bottom: 2px solid #eee;
+}
+
+body.dark-mode .hero-subtitle {
+  color: #bbb;
+}
+
+/* Botón modo oscuro */
+body.dark-mode .btn {
+  background: #eee;
+  color: #121212;
+  border: 2px solid #eee;
+  transition: all 0.2s ease;
+}
+
+body.dark-mode .btn:hover {
+  background: #121212;
+  color: #eee;
+}
+
+/* Tarjetas modo oscuro */
+body.dark-mode .blog-card {
+  border: 2px solid #eee;
+  background: #1e1e1e;
+  color: #eee;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+body.dark-mode .blog-card:hover {
+  background: #eee;
+  color: #121212;
+}
+
+body.dark-mode .blog-card a {
+  color: #121212;
+  font-weight: bold;
+}
+
+body.dark-mode .blog-card a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* Footer modo oscuro */
+body.dark-mode .footer {
+  border-top: 2px solid #eee;
+  background: #121212;
+  color: #bbb;
+}
+
+body.dark-mode .footer .redes a {
+  color: #bbb;
+}
+
+body.dark-mode .footer .redes a:hover {
+  color: #eee;
+  text-decoration: underline;
+}
+
+/* -----------------------------------
+  SIDEBAR DE POSTS RELACIONADOS (modo oscuro)
+----------------------------------- */
+body.dark-mode {
+  .sidebar-blog {
+    border-left-color: #eee;
+
+    h3 {
+      color: #eee;
+
+      .etiqueta-actual {
+        background: #eee;
+        color: #121212;
+      }
+    }
+
+    .blog-relacionados {
+      li {
+        background: #1e1e1e;
+        border: 2px solid #eee;
+        color: #eee;
+        box-shadow: 3px 3px 0 #eee;
+        transition: background 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          background: #eee;
+          color: #121212;
+
+          a,
+          button {
+            color: #121212;
+            border-color: #121212;
+          }
+        }
+
+        img {
+          border: 1.5px solid #eee;
+        }
+
+        .contenido-card {
+          a.titulo-post {
+            color: inherit;
+          }
+
+          button.leer-mas {
+            border: 1.5px solid #eee;
+            color: inherit;
+            background: transparent;
+            transition: background 0.3s ease, color 0.3s ease;
+
+            &:hover {
+              background: #121212;
+              color: #eee;
+              border-color: #eee;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 900px) {
+      border-left: none;
+      border-top: 3px solid #eee;
+    }
+  }
+}

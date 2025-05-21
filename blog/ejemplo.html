@@ -1,0 +1,109 @@
+<!-- archivo: blog/blog-base.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TÍTULO DE LA ENTRADA – Blog de Diego</title>
+  <meta name="description" content="Descripción breve de esta entrada de blog." />
+
+  <!-- Open Graph para compartir en redes -->
+  <meta property="og:title" content="TÍTULO DE LA ENTRADA – Blog de Diego" />
+  <meta property="og:description" content="Descripción breve de esta entrada." />
+  <meta property="og:image" content="https://tusitio.com/assets/blog/NOMBRE-IMAGEN.webp" />
+  <meta property="og:url" content="https://tusitio.com/blog/NOMBRE-ENTRADA.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+
+  <button id="toggle-dark-mode" aria-label="Alternar modo oscuro" title="Modo oscuro" aria-pressed="false" class="btn-dark-mode reveal">
+    Dark Mode
+  </button>
+
+  <div id="nav-container" class="reveal"></div>
+
+  <main class="blog-layout container reveal" id="inicio">
+    
+    <!-- COLUMNA PRINCIPAL -->
+    <article class="entrada-blog" data-categoria="CATEGORÍA">
+      <header class="entrada-header reveal">
+        <h1 class="entrada-titulo">TÍTULO DE LA ENTRADA</h1>
+        <p class="entrada-meta">Publicado el FECHA — por Diego mi Jefecito</p>
+        <img src="/assets/blog/NOMBRE-IMAGEN.webp"
+             alt="Descripción de la imagen"
+             class="entrada-img"
+             loading="lazy" />
+      </header>
+
+      <div class="share-buttons">
+        <a href="#" class="btn-share" aria-label="Compartir en X" target="_blank"><img src="/assets/icons/twitter.png" alt="X"></a>
+        <a href="#" class="btn-share" aria-label="Compartir en Facebook" target="_blank"><img src="/assets/icons/facebook.png" alt="Facebook"></a>
+        <a href="#" class="btn-share" aria-label="Compartir por Mail" target="_blank"><img src="/assets/icons/mail.png" alt="Mail"></a>
+        <a href="#" class="btn-share" aria-label="Compartir en WhatsApp" target="_blank"><img src="/assets/icons/whatsapp.png" alt="WhatsApp"></a>
+      </div>
+
+      <section class="entrada-contenido reveal">
+        <p>Primer párrafo de tu entrada. Presentación o reflexión inicial.</p>
+        <p>Segundo párrafo. Desarrollo del tema.</p>
+        <h2>Subtítulo (si lo necesitás)</h2>
+        <p>Más contenido.</p>
+        <blockquote>“Frase destacada o idea fuerte.”</blockquote>
+        <p>Conclusión o reflexión final.</p>
+      </section>
+
+      <footer class="entrada-footer reveal">
+        <p>¿Te resonó lo que leíste? ¿Querés charlar, colaborar o mostrarme algo? ¡Escribime!</p>
+      </footer>
+    </article>
+
+    <!-- SIDEBAR CON MÁS ENTRADAS -->
+    <aside class="sidebar-blog reveal">
+      <h3>Más sobre <span class="etiqueta-actual">CATEGORÍA</span></h3>
+      <ul class="blog-relacionados" id="blog-relacionados-list">
+        <!-- Se llena automáticamente con JS -->
+      </ul>
+    </aside>
+
+  </main>
+
+  <!-- CTA Y DONACIÓN -->
+  <section class="cta reveal">
+    <div class="container">
+      <div class="share-buttons share-buttons-inline" style="margin-bottom: 1rem;">
+        <a href="#" class="btn-share" aria-label="Compartir en X" target="_blank"><img src="/assets/icons/twitter.png" alt="X"></a>
+        <a href="#" class="btn-share" aria-label="Compartir en Facebook" target="_blank"><img src="/assets/icons/facebook.png" alt="Facebook"></a>
+        <a href="#" class="btn-share" aria-label="Compartir por Mail" target="_blank"><img src="/assets/icons/mail.png" alt="Mail"></a>
+        <a href="#" class="btn-share" aria-label="Compartir en WhatsApp" target="_blank"><img src="/assets/icons/whatsapp.png" alt="WhatsApp"></a>
+      </div>
+
+      <h3>¿Te gustó lo que leíste?</h3>
+      <p>Podés contactarme para charlar, colaborar o simplemente compartir memes generados por IA.</p>
+
+      <div style="text-align:center; margin-top: 1rem;">
+        <a href="#contacto" class="btn">Hablamos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="donacion-section reveal">
+    <div class="container">
+      <h3>vamos, regalame un café ☕</h3>
+      <p>¿Querés apoyar este proyecto? Sé mi mecenas y ayudame a seguir creando.</p>
+      <a href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=TU_PREF_ID_AQUI"
+         target="_blank"
+         rel="noopener"
+         class="btn btn-donacion"
+         aria-label="Donar vía Mercado Pago">
+        ¡Donar un café!
+      </a>
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

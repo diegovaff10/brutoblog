@@ -1,0 +1,197 @@
+<!-- archivo: blog/css-y-el-arte-de-perder-la-calma.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS y el arte de perder la calma – Blog de Diego</title>
+  <meta name="description"
+    content="Una reflexión sobre cómo escribir CSS puede llevarte al borde del colapso... o iluminar tu camino zen hacia la alineación perfecta." />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+
+  <button id="toggle-dark-mode" aria-label="Alternar modo oscuro" aria-pressed="false" class="btn-dark-mode reveal">
+    Dark Mode
+  </button>
+
+  <div id="nav-container" class="reveal"></div>
+
+  <!-- ADS: Top del artículo -->
+  <div class="ads-container">
+    <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+      data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <main class="blog-layout container reveal" id="inicio">
+
+    <!-- COLUMNA PRINCIPAL -->
+    <article class="entrada-blog" data-categoria="programación">
+      <div class="blog-label">Programación</div>
+      <header class="entrada-header reveal">
+        <h1 class="entrada-titulo">CSS y el arte de perder la calma</h1>
+        <p class="entrada-meta">Publicado el 19 de mayo de 2025 — por <a>Diego Adrián Videla</a></p>
+        <figure>
+          <img src="/assets/blog/css-crisis.jpg" alt="CSS escrito a mano" class="entrada-img" />
+          <figcaption>Exaustiva revision de css.</figcaption>
+        </figure>
+      </header>
+
+
+      <div class="share-buttons">
+        <a href="#" class="btn-share" aria-label="Compartir en X" target="_blank" rel="noopener">
+          <img src="/assets/icons/twitter.png" alt="X">
+        </a>
+        <a href="#" class="btn-share" aria-label="Compartir en Facebook" target="_blank" rel="noopener">
+          <img src="/assets/icons/facebook.png" alt="Facebook">
+        </a>
+        <a href="#" class="btn-share" aria-label="Compartir por Mail" target="_blank" rel="noopener">
+          <img src="/assets/icons/mail.png" alt="Mail">
+        </a>
+        <a href="#" class="btn-share" aria-label="Compartir en WhatsApp" target="_blank" rel="noopener">
+          <img src="/assets/icons/whatsapp.png" alt="WhatsApp">
+        </a>
+      </div>
+
+      <section class="entrada-contenido reveal">
+        <p>Si has trabajado con CSS, sabes que puede ser tanto una herramienta poderosa como una fuente inagotable de
+          frustración. Un lenguaje que, en teoría, debería ser simple ("solo colores y márgenes, ¿no?"), pero que en la
+          práctica esconde un abismo de peculiaridades que pueden hacer que hasta el desarrollador más zen pierda la
+          calma.
+
+        </p>
+        <h2>"¿Por qué no se centra esto?"</h2>
+        <pre><code>.centrado {  
+          display: flex;  
+          justify-content: center;  
+          align-items: center; 
+        }  </code></pre>
+        <p>Y aún así, el elemento hace lo que le da la gana. ¿Falta un height: 100vh? ¿Hay un margin: auto perdido? ¿O
+          acaso el padre tiene un overflow: hidden que está arruinando todo? CSS es como un detective que te deja
+          pistas, pero las escribe en un idioma que solo entiende después de tres horas de Stack Overflow.</p>
+
+        <blockquote>“El CSS no es difícil. Lo que es difícil es mi paciencia.” — Un programador al borde</blockquote>
+
+        <h2>z-index: 999999; y aún así está detrás</h2>
+        <p>Cuando asignas un z-index estratosférico y el elemento sigue escondido como si estuviera en una dimensión
+          paralela. Luego descubres que el padre tiene position: static o que hay un contexto de apilamiento que no
+          habías considerado. CSS te enseña humildad a fuerza de !important.</p>
+        <!-- ADS intermedio -->
+        <div class="ads-container">
+          <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+            data-ad-slot="1234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <h2>Los misterios del display: inline-block</h2>
+        <pre><code>.elementos {  
+            display: inline-block;  
+          }  </code></pre>
+        <p>Y de repente aparecen espacios fantasma entre tus divs porque HTML interpreta los saltos de línea como si
+          fueran significantes. Solución: font-size: 0 en el contenedor (¿¡WTF!?) o escribir todo en una línea.</p>
+
+        <h2>Cuando margin y padding deciden conspirar</h2>
+          <ul>
+            <li>"¿Por qué hay un espacio extra aquí?"</li>
+            <li>Inspecciona elemento</li>
+            <li>"Ah, claro, margin-collapse... ¿pero por qué a veces sí y a veces no?"</li>
+          </ul>
+          <p>CSS tiene reglas ocultas que solo se activan cuando detectan que estás a punto de terminar tu trabajo.</p>
+          
+          <h2>Flexbox y Grid: Poderosos, pero oscuros</h2>
+          <p>Flexbox y Grid llegaron para salvarnos… y para complicarnos la vida de nuevas maneras.</p>
+          <pre><code>.contenedor {  
+            display: grid;  
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  
+          }  </code></pre>
+          <p>Funciona perfecto… hasta que en un breakpoint inexplicable todo se desordena y pasas las próximas dos horas ajustando
+            <strong> fr, px, </strong> y tu salud mental.</p>
+          
+          <h2>Las animaciones que se disparan solas</h2>
+          <pre><code>@keyframes aparecer {  
+            from { opacity: 0; }  
+            to { opacity: 1; }  
+          }  
+          
+          .elemento {  
+            animation: aparecer 1s;  
+          }  </code></pre>
+          <p>Y de repente, al recargar la página, todo parpadea como una discoteca de los 90. ¿animation-fill-mode? ¿prefers-reduced-motion? ¿O simplemente el universo conspira contra ti?</p>
+
+          <h3>Conclusión: CSS es amor-odio</h3>
+          <p>CSS es como un arte marcial: requiere paciencia, práctica y, a veces, gritar en un cojín. Pero cuando finalmente logras que todo se vea exactamente como querías, la satisfacción es inmensa.</p>
+          <p>¿Tienes tus propias batallas con CSS?</p>
+          <strong>Bonus: </strong> Si quieres reírte (o llorar) más, mira <a href="https://css-tricks.com/wtf-css/">CSS {WTF}</a> o el clásico <a href="https://cantunsee.space/">Can't Unsee</a> para entrenar tu ojo frontend.
+          <br>
+          </section>
+
+      <footer class="entrada-footer reveal">
+        <p>¿También te peleás con el CSS? Contame tu historia o recomendame tu terapia favorita.</p><p>¡Hasta la próxima, y que el 
+          <code>!important</code> esté contigo! 🚀</p>
+        </p>
+      </footer>
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar-blog reveal">
+      <h3>Más sobre <span class="etiqueta-actual">programación</span></h3>
+      <ul class="blog-relacionados" id="blog-relacionados-list">
+        <!-- Se llenará automáticamente -->
+      </ul>
+    </aside>
+
+  </main>
+
+  <!-- ADS: Final del artículo -->
+  <div class="ads-container">
+    <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+      data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta reveal">
+    <div class="container">
+      <div class="share-buttons share-buttons-inline" style="margin-bottom: 1rem;">
+        <a href="#" class="btn-share" aria-label="Compartir en X" target="_blank" rel="noopener">
+          <img src="/assets/icons/twitter.png" alt="X" />
+        </a>
+        <a href="#" class="btn-share" aria-label="Compartir en Facebook" target="_blank" rel="noopener">
+          <img src="/assets/icons/facebook.png" alt="Facebook" />
+        </a>
+        <a href="#" class="btn-share" aria-label="Compartir por Mail" target="_blank" rel="noopener">
+          <img src="/assets/icons/mail.png" alt="Mail" />
+        </a>
+        <a href="#" class="btn-share" aria-label="Compartir en WhatsApp" target="_blank" rel="noopener">
+          <img src="/assets/icons/whatsapp.png" alt="WhatsApp" />
+        </a>
+      </div>
+
+      <h3>¿Te gustó lo que leíste?</h3>
+      <p>Podés contactarme para charlar, colaborar o simplemente compartir memes de centrar divs.</p>
+      <div style="text-align:center; margin-top: 1rem;">
+        <a href="#contacto" class="btn">Hablamos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONACIÓN -->
+  <section class="donacion-section reveal">
+    <div class="container">
+      <h3>vamos, regalame un café ☕</h3>
+      <p>¿Querés apoyar este proyecto? Sé mi mecenas y ayudame a seguir creando.</p>
+      <a href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=TU_PREF_ID_AQUI" target="_blank"
+        rel="noopener" class="btn btn-donacion" aria-label="Donar vía Mercado Pago">
+        ¡Donar un café!
+      </a>
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

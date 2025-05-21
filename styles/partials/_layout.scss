@@ -1,0 +1,147 @@
+/* -----------------------------------
+  GLOBAL BOX-SIZING
+----------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* -----------------------------------
+  CONTENEDOR CENTRALIZADO
+----------------------------------- */
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* -----------------------------------
+  HEADER FIJO, MINIMALISTA Y RESPONSIVO
+----------------------------------- */
+
+
+/* -----------------------------------
+  SECCIÓN HERO
+----------------------------------- */
+.hero {
+  padding: 5rem 2rem;
+  border-bottom: 2px solid #000;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* -----------------------------------
+  BLOG CARD
+----------------------------------- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.blog-card {
+  background: #fff;
+  border: 3px solid #000;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  box-shadow: 4px 4px 0px #000;
+  user-select: none;
+
+  &:hover,
+  &:focus {
+    background: #000;
+    color: #fff;
+    outline: none;
+  }
+
+  &.active {
+    background: #000;
+    color: #fff;
+    box-shadow: none;
+    cursor: default;
+  }
+}
+
+
+.blog-card img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border: 1px solid #000;
+  margin-bottom: 0.5rem;
+  display: block;
+  /* elimina espacios debajo de la imagen */
+}
+
+/* -----------------------------------
+  FOOTER
+----------------------------------- */
+.footer {
+  border-top: 2px solid #000;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #000;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem; // espacio entre cada ítem, ajusta como quieras
+  justify-content: center; // centra los ítems horizontalmente dentro del footer
+  align-items: center; // alinea verticalmente si hay íconos o textos de diferente altura
+}
+
+.footer .redes a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer .redes a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+/* -----------------------------------
+  SCROLL REVEAL
+  -----------------------------------*/
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+

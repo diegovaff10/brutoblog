@@ -1,0 +1,46 @@
+/* -----------------------------------
+  CONTENEDOR DE ANUNCIOS Y BOTÓN OCULTAR
+----------------------------------- */
+.ads-container {
+  margin: 2rem 0;
+  border: 2px dashed #000;
+  padding: 1rem;
+  text-align: center;
+}
+
+.btn:disabled,
+.btn[disabled],
+#ocultar-anuncios:disabled {
+  background: #aaa;
+  color: #fff;
+  cursor: default;
+}
+
+/* Wrapper para botón ocultar anuncios y mensaje */
+.ocultar-anuncios-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Botón ocultar anuncios */
+#ocultar-anuncios {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  background-color: #000000;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+#ocultar-anuncios:hover:not(:disabled) {
+  background-color: #222;
+}
+
+/* Mensaje de gracias oculto, visible con JS */
+#mensaje-gracias {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #222;
+  display: none;
+}

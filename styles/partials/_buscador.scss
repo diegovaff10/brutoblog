@@ -1,0 +1,22 @@
+.buscador {
+  margin-bottom: 1.5rem;
+}
+
+#buscador {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  background: #fff;
+  color: #000;
+  transition: border-color 0.3s;
+
+  &:focus {
+    border-color: #ff0000; // rojo brutalista
+    outline: none;
+    box-shadow: 6px 6px 0 #ff0000;
+  }
+}

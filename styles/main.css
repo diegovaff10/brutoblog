@@ -1,0 +1,405 @@
+@charset "UTF-8";
+/* -----------------------------------
+  RESET & BASE
+----------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* -----------------------------------
+  BOTÓN DARK MODE (FIXED)
+----------------------------------- */
+#toggle-dark-mode {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: 2px solid #000;
+  color: #000;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 9999; /* Siempre arriba */
+  border-radius: 0; /* Estilo brutalista puro */
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+/* Estado Dark Mode para el botón */
+body.dark-mode #toggle-dark-mode {
+  border-color: #eee;
+  color: #eee;
+}
+
+/* -----------------------------------
+  MODO OSCURO (Dark Mode)
+----------------------------------- */
+body.dark-mode {
+  background-color: #121212; /* Fondo oscuro */
+  color: #eee; /* Texto claro */
+  font-family: "Space Mono", monospace;
+}
+
+/* Enlaces en modo oscuro */
+body.dark-mode a {
+  color: #eee;
+  text-decoration: underline;
+  transition: background 0.2s ease;
+}
+
+body.dark-mode a:hover {
+  background: #eee;
+  color: #121212;
+}
+
+/* Header modo oscuro */
+body.dark-mode .header {
+  background: #121212;
+  border-bottom: 2px solid #eee;
+}
+
+body.dark-mode .logo,
+body.dark-mode .nav a {
+  color: #eee;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Hero modo oscuro */
+body.dark-mode .hero {
+  border-bottom: 2px solid #eee;
+}
+
+body.dark-mode .hero-subtitle {
+  color: #bbb;
+}
+
+/* Botón modo oscuro */
+body.dark-mode .btn {
+  background: #eee;
+  color: #121212;
+  border: 2px solid #eee;
+  transition: all 0.2s ease;
+}
+
+body.dark-mode .btn:hover {
+  background: #121212;
+  color: #eee;
+}
+
+/* Tarjetas modo oscuro */
+body.dark-mode .blog-card {
+  border: 2px solid #eee;
+  background: #1e1e1e;
+  color: #eee;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+body.dark-mode .blog-card:hover {
+  background: #eee;
+  color: #121212;
+}
+
+body.dark-mode .blog-card a {
+  color: #121212;
+  font-weight: bold;
+}
+
+body.dark-mode .blog-card a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* Footer modo oscuro */
+body.dark-mode .footer {
+  border-top: 2px solid #eee;
+  background: #121212;
+  color: #bbb;
+}
+
+body.dark-mode .footer .redes a {
+  color: #bbb;
+}
+
+body.dark-mode .footer .redes a:hover {
+  color: #eee;
+  text-decoration: underline;
+}
+
+/* -----------------------------------
+  TIPOGRAFÍA & ENLACES
+----------------------------------- */
+a {
+  text-decoration: underline;
+  color: #000;
+  transition: background 0.2s ease;
+}
+
+a:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* -----------------------------------
+  TIPOGRAFÍA FUERTE PARA TITULOS
+----------------------------------- */
+h1, h2, h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* -----------------------------------
+  CONTENEDOR CENTRALIZADO
+----------------------------------- */
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* -----------------------------------
+  HEADER FIJO Y MINIMALISTA
+----------------------------------- */
+.header {
+  border-bottom: 2px solid #000;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav a {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* -----------------------------------
+  SECCIÓN HERO
+----------------------------------- */
+.hero {
+  padding: 5rem 2rem;
+  border-bottom: 2px solid #000;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* -----------------------------------
+  FOOTER
+----------------------------------- */
+.footer {
+  border-top: 2px solid #000;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #000;
+}
+
+.footer .redes a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer .redes a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+/* -----------------------------------
+  BOTÓN TIPO BRUTALISTA
+----------------------------------- */
+.btn {
+  background: #000;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border: 2px solid #000;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* -----------------------------------
+  GRID PARA BLOG
+----------------------------------- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* TARJETAS DE BLOG */
+.blog-card {
+  border: 2px solid #000;
+  padding: 1.5rem;
+  transition: background 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.blog-card:hover {
+  background: #000;
+  color: #fff;
+}
+
+.blog-card a {
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* -----------------------------------
+  ESTILOS EXTRA PARA ENTRADAS (OPCIONAL)
+----------------------------------- */
+.entrada-img {
+  width: 100%;
+  margin: 2rem 0;
+  border: 2px solid #000;
+}
+
+.entrada-meta {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.entrada-contenido h2 {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+}
+
+.entrada-contenido blockquote {
+  border-left: 4px solid #000;
+  padding-left: 1rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #333;
+}
+
+/* -----------------------------------
+  CONTENEDOR DE ANUNCIOS Y BOTÓN OCULTAR
+----------------------------------- */
+.ads-container {
+  margin: 2rem 0;
+  border: 2px dashed #000;
+  padding: 1rem;
+  text-align: center;
+}
+
+.btn:disabled,
+.btn[disabled],
+#ocultar-anuncios:disabled {
+  background: #aaa;
+  color: #fff;
+  cursor: default;
+}
+
+/* Wrapper para botón ocultar anuncios y mensaje */
+.ocultar-anuncios-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Botón ocultar anuncios */
+#ocultar-anuncios {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  background-color: #000000;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+#ocultar-anuncios:hover:not(:disabled) {
+  background-color: #222;
+}
+
+/* Mensaje de gracias oculto, visible con JS */
+#mensaje-gracias {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #222;
+  display: none;
+}
+
+/* -----------------------------------
+  CTA (Call to Action) SECCIÓN
+----------------------------------- */
+.cta .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}/*# sourceMappingURL=main.css.map */
