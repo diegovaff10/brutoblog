@@ -4,39 +4,37 @@
 ---
 
 ## 🧱 Estructura del Proyecto
-(```
+```
 brutoblog/
 ├── index.html
 ├── blog/
-│ ├── entrada-1.html
-│ ├── entrada-2.html
-│ └── ...
+│   ├── entrada-1.html
+│   ├── entrada-2.html
+│   └── ...
 ├── assets/
-│ ├── img/
-│ ├── icons/
-│ └── misc/
-│ └── fondo-textura.png
+│   ├── img/
+│   ├── icons/
+│   └── misc/
+│       └── fondo-textura.png
 ├── components/
-│ └── nav.html
+│   └── nav.html
 ├── scss/
-│ ├── base/
-│ ├── layout/
-│ ├── modules/
-│ ├── utils/
-│ └── main.scss
+│   ├── base/
+│   ├── layout/
+│   ├── modules/
+│   ├── utils/
+│   └── main.scss
 ├── public/
-│ └── css/
-│ └── styles.css
+│   └── css/
+│       └── styles.css
 ├── js/
-│ ├── main.js
-│ └── navScroll.js
+│   ├── main.js
+│   └── navScroll.js
 ├── data/
-│ └── blogData.js (opcional si escalás a JSON)
+│   └── blogData.js
 └── README.md
-```)
-markdown
-Copiar
-Editar
+```
+
 
 ---
 
