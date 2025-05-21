@@ -4,7 +4,7 @@
 ---
 
 ## 🧱 Estructura del Proyecto
-
+(```
 brutoblog/
 ├── index.html
 ├── blog/
@@ -33,7 +33,7 @@ brutoblog/
 ├── data/
 │ └── blogData.js (opcional si escalás a JSON)
 └── README.md
-
+```)
 markdown
 Copiar
 Editar
